@@ -1,0 +1,13 @@
+{
+  "resource_group_name": "DOUEXAMPLE-IMAGES",
+  "consul_version": "1.7.0",
+  "vault_version": "1.2.2",
+  "owner": "fake.user@digitalonus.com",
+  "release": "0.0.1",
+  "azure_location": "canadacentral",
+  "image_publisher": "OpenLogic",
+  "image_offer": "CentOS",
+  "image_sku": "7.7",
+  "os_type": "Linux",
+  "vm_size": "Standard_DS2_v2"
+}

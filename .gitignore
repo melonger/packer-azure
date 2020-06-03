@@ -1,0 +1,11 @@
+**/temp/
+
+# Other files that should not be kept
+id_rsa*
+*.json
+*.zip
+*.pem
+*.sh
+*.svg
+
+*.ignore

@@ -1,0 +1,10 @@
+- include: apt.yml
+  when: ansible_distribution == "Ubuntu"
+
+- include: yum.yml
+  when: ansible_distribution == "RedHat" or ansible_distribution == "Amazon" or ansible_distribution == "CentOS"
+
+- name: Install dependencies
+  package:
+    name: ['unzip', 'htop', 'jq', 'awscli', 'ansible', 'wget', 'chrony', 'mlocate', 'nano', 'git', 'postgresql']
+    state: present

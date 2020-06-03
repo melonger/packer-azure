@@ -1,0 +1,20 @@
+- name: Import Kubernetes GPG key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: Install Kubernetes Repository
+  apt_repository:
+    repo: deb http://apt.kubernetes.io/ kubernetes-yakkety main
+    state: present
+
+- name: Update and upgrade apt packages
+  apt:
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 86400
+
+- name: Install apt dependencies
+  apt:
+    name: ['aptitude', 'apt-transport-https', 'build-essential', 'python-dev', 'libffi-dev', 'libssl-dev', 'cloud-init']
+    state: present

@@ -1,0 +1,37 @@
+- name: Enable SELinux
+  selinux:
+    policy: targeted
+    state: permissive
+
+- name: Import EPEL GPG key
+  rpm_key:
+    key: http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
+    state: present
+
+- name: Install EPEL 7
+  yum:
+    name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    state: present
+
+- name: Add Docker repo
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docer-ce.repo
+
+- name: Create /usr/local/tmp directory
+  file:
+    path: /usr/local/tmp
+    state: directory
+    mode: '0777'
+
+- name: Install yum dependencies
+  yum:
+    name: ['ipvsadm', 'yum-utils', 'lvm2', 'WALinuxAgent', 'cloud-init']
+    state: present
+    update_cache: true
+
+- name: Update the Operating System
+  yum:
+    name: "*"
+    state: latest
+    update_cache: True
