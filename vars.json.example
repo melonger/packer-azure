@@ -1,7 +1,5 @@
 {
-  "resource_group_name": "DOUEXAMPLE-IMAGES",
-  "consul_version": "1.7.0",
-  "vault_version": "1.2.2",
+  "resource_group_name": "EXAMPLE-IMAGES",
   "owner": "fake.user@digitalonus.com",
   "release": "0.0.1",
   "azure_location": "canadacentral",
