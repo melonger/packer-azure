@@ -7,8 +7,6 @@
     "client_id": "{{env `ARM_CLIENT_ID`}}",
     "client_secret": "{{env `ARM_CLIENT_SECRET`}}",
     "azure_location": "",
-    "consul_version": "",
-    "vault_version": "",
     "resource_group_name": ""
   },
   "builders": [
