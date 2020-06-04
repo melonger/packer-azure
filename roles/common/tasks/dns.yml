@@ -6,7 +6,7 @@
   register: dhclient
   with_items:
     - 'prepend domain-name-servers 10.27.44.100, 10.67.44.100;'
-    - 'prepend domain-search "qvcdev.qvc.net";'
+    - 'prepend domain-search "example.dns.net";'
 
 - name: Restart Network
   service: name=network state=restarted
