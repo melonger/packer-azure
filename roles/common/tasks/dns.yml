@@ -1,0 +1,13 @@
+- name: Update dhclient to add internal name servers and search domains
+  lineinfile:
+    path: /etc/dhcp/dhclient.conf
+    line: "{{ item }}"
+    create: yes
+  register: dhclient
+  with_items:
+    - 'prepend domain-name-servers 10.27.44.100, 10.67.44.100;'
+    - 'prepend domain-search "qvcdev.qvc.net";'
+
+- name: Restart Network
+  service: name=network state=restarted
+  when: dhclient.changed
